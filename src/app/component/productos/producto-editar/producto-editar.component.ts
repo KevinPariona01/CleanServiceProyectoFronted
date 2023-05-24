@@ -13,7 +13,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductoEditarComponent extends BaseComponent implements OnInit {
   producto!: Producto;
-  
   editar:boolean=false;
 
 
@@ -33,6 +32,7 @@ export class ProductoEditarComponent extends BaseComponent implements OnInit {
 
   inicializar(){
     this.producto = {
+      n_idproducto:0,
       c_codigo:'',
       c_descripcion:''
     }

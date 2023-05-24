@@ -45,6 +45,8 @@ import { ResetearClaveComponent } from './component/generico/resetear-clave/rese
 import { DataUsuarioComponent } from './component/seguridad/data-usuario/data-usuario.component';
 import { ProductoComponent } from './component/productos/producto/producto.component';
 import { ProductoEditarComponent } from './component/productos/producto-editar/producto-editar.component';
+import { ClienteComponent } from './component/clientes/cliente/cliente.component';
+import { ClienteEditarComponent } from './component/clientes/cliente-editar/cliente-editar.component';
 
 
 
@@ -70,6 +72,8 @@ import { ProductoEditarComponent } from './component/productos/producto-editar/p
     DataUsuarioComponent,
     ProductoComponent,
     ProductoEditarComponent,
+    ClienteComponent,
+    ClienteEditarComponent,
   
   ],
   imports: [
