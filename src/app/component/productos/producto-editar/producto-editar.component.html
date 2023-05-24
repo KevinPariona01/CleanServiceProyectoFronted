@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Edición {{producto.c_codigo}}</h2>
+<br>
+<div class="body">
+  <form class="example-container" #newForm="ngForm" (ngSubmit)="guardar(newForm)">
+    <div mat-dialog-content class="contenedor">
+  
+      <mat-form-field>
+        <input matInput placeholder="Código" name="c_codigo" #c_username="ngModel" [(ngModel)]="producto.c_codigo"
+          minlength="3" required />
+        <mat-hint class="error" *ngIf="producto.c_codigo.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Descripción" name="c_descripcion" #c_username="ngModel" [(ngModel)]="producto.c_descripcion"
+          minlength="3" required />
+        <mat-hint class="error" *ngIf="producto.c_descripcion.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+  
+      <button button mat-stroked-button color="primary" type="submit" cdkFocusInitial
+        [disabled]="!newForm.form.valid" >
+        <mat-icon>save</mat-icon>
+        <span>Guardar</span>
+      </button>
+    </div>
+  </form>
+</div>
