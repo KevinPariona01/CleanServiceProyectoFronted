@@ -48,5 +48,13 @@ export class ClienteService {
     });
     return this._http.post(this.url + 'cliente/eliminarCliente', request, { headers: reqHeader });
   }
+
+  clienteXCodigo(request:any,token:any): Observable<any> {
+    var reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    });
+    return this._http.post(this.url + 'cliente/clienteXCodigo', request, { headers: reqHeader });
+  }
   
 }

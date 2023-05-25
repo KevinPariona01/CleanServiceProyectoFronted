@@ -29,6 +29,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 //COMPONENTS
 
@@ -108,6 +109,7 @@ import { PeriodoEditarComponent } from './component/periodos/periodo-editar/peri
     MatBadgeModule,
     MatSlideToggleModule,
     MatButtonModule,
+    MatAutocompleteModule,
     HttpClientModule,
     NgxSpinnerModule
     

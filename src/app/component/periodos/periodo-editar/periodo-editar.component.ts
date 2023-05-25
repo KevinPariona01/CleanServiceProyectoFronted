@@ -33,7 +33,7 @@ export class PeriodoEditarComponent extends BaseComponent implements OnInit {
 
   inicializar(){
     this.periodo = {
-      n_idperiodo:0,
+      n_idgen_periodo:0,
       c_mes:'',
       c_anio:'',
       c_descripcion:'',

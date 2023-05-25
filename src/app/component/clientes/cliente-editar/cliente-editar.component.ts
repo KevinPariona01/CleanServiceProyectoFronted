@@ -33,7 +33,7 @@ export class ClienteEditarComponent extends BaseComponent implements OnInit {
 
   inicializar(){
     this.cliente = {
-      n_idcliente:0,
+      n_idgen_cliente:0,
       c_codigo:'',
       c_razon_social:'',
       c_direccion:''

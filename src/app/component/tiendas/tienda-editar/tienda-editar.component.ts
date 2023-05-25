@@ -5,6 +5,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TiendaService } from 'src/app/service/tienda.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ClienteService } from 'src/app/service/cliente.service';
+import { Cliente } from 'src/app/interface/cliente.interface';
 
 @Component({
   selector: 'app-tienda-editar',
@@ -15,12 +17,14 @@ export class TiendaEditarComponent extends BaseComponent implements OnInit {
 
   tienda!: Tienda;
   editar:boolean=false;
+  listaClientesXCodigo:any=[];
 
 
   constructor(
     private dialogRef: MatDialogRef<TiendaEditarComponent>,
     @Inject(MAT_DIALOG_DATA) public data: TiendaEditarComponent,
     private tiendaService : TiendaService,
+    private clienteService : ClienteService,
     public override router: Router, 
     public override snackBar: MatSnackBar, 
   ) {
@@ -33,11 +37,12 @@ export class TiendaEditarComponent extends BaseComponent implements OnInit {
 
   inicializar(){
     this.tienda = {
-      n_idtienda:0,
-      n_idcliente:0,
+      n_idgen_tienda:0,
+      n_idgen_cliente:0,
       c_codigo:'',
       c_direccion:'',
-      c_nombre_responsable:''
+      c_nombre_responsable:'',
+      cod_cliente:''
     }
   }
 
@@ -82,6 +87,27 @@ export class TiendaEditarComponent extends BaseComponent implements OnInit {
         this.openSnackBar(res.mensaje, 2500);
       }
     });
+  }
+
+  clienteXCodigo(){
+    let parametro = {
+      c_codigo : this.tienda.cod_cliente 
+    }
+    if(this.tienda.cod_cliente .length>2){
+      this.clienteService.clienteXCodigo(parametro, this.getToken().token)
+      .subscribe((res:any)=>{
+        if(res.estado){
+          this.listaClientesXCodigo = res.data
+        }else{
+          this.openSnackBar(res.mensaje, 2500);
+        }
+        
+      });
+    }
+  }
+
+  obtenerClenteXCodigo(cliente:Cliente){
+    this.tienda.n_idgen_cliente = cliente.n_idgen_cliente;
   }
 
 }

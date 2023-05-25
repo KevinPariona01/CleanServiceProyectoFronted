@@ -19,11 +19,20 @@
           minlength="3" required />
         <mat-hint class="error" *ngIf="tienda.c_nombre_responsable.length<3">debe tener mínimo de 3 dígitos</mat-hint>
       </mat-form-field>
+      <mat-form-field>
+        <input autocomplete="off" matInput placeholder="Codigo de Cliente" name="cod_cliente" #cod_cliente="ngModel" [(ngModel)]="tienda.cod_cliente" (keydown)="clienteXCodigo()" [matAutocomplete]="auto"
+          minlength="3" required />
+        <mat-hint class="error" *ngIf="this.tienda.cod_cliente .length<3">debe tener mínimo de 3 dígitos</mat-hint>
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let cli of listaClientesXCodigo" [value]="cli.c_codigo" (click)="obtenerClenteXCodigo(cli)">
+            {{cli.c_codigo}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
     </div>
     <div mat-dialog-actions>
-  
-      <button button mat-stroked-button color="primary" type="submit" cdkFocusInitial
-        [disabled]="!newForm.form.valid" >
+      <button button mat-stroked-button color="primary" type="submit"
+        [disabled]="!newForm.form.valid || this.tienda.n_idgen_cliente==0" >
         <mat-icon>save</mat-icon>
         <span>Guardar</span>
       </button>

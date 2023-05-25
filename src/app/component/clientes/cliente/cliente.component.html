@@ -44,7 +44,7 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <ng-template let-row matRowDef cdkVirtualFor [matRowDefColumns]="displayedColumns">
+            <ng-template let-row matRowDef [matRowDefColumns]="displayedColumns">
             <tr mat-row></tr>
 
             </ng-template>

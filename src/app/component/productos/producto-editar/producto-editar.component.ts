@@ -32,7 +32,7 @@ export class ProductoEditarComponent extends BaseComponent implements OnInit {
 
   inicializar(){
     this.producto = {
-      n_idproducto:0,
+      n_idgen_producto:0,
       c_codigo:'',
       c_descripcion:''
     }
