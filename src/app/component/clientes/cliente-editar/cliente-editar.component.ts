@@ -67,7 +67,7 @@ export class ClienteEditarComponent extends BaseComponent implements OnInit {
       if(res.estado){
         this.openSnackBar("Cliente agregado", 2500);
       }else{
-        this.openSnackBar("Error", 2500);
+        this.openSnackBar(res.mensaje, 2500);
       }
     });
   }
@@ -78,7 +78,7 @@ export class ClienteEditarComponent extends BaseComponent implements OnInit {
       if(res.estado){
         this.openSnackBar("Cliente Actualizado", 2500);
       }else{
-        this.openSnackBar("Error", 2500);
+        this.openSnackBar(res.mensaje, 2500);
       }
     });
   }

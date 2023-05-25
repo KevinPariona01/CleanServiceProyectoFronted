@@ -65,7 +65,7 @@ export class ProductoEditarComponent extends BaseComponent implements OnInit {
       if(res.estado){
         this.openSnackBar("Producto agregado", 2500);
       }else{
-        this.openSnackBar("Error", 2500);
+        this.openSnackBar(res.mensaje, 2500);
       }
     });
   }
@@ -76,7 +76,7 @@ export class ProductoEditarComponent extends BaseComponent implements OnInit {
       if(res.estado){
         this.openSnackBar("Producto Actualizado", 2500);
       }else{
-        this.openSnackBar("Error", 2500);
+        this.openSnackBar(res.mensaje, 2500);
       }
     });
   }

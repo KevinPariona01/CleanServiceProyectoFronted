@@ -39,7 +39,7 @@
                         <span>Administración de productos</span>
                     </a>
                 </mat-expansion-panel>
-                <mat-expansion-panel [expanded]="idPanel == 3" ><!--PRODUCTO-->
+                <mat-expansion-panel [expanded]="idPanel == 3" ><!--CLIENTE-->
                     <mat-expansion-panel-header>
                         <mat-panel-title >
                             <mat-icon>perm_identity</mat-icon>
@@ -49,6 +49,18 @@
                     <a mat-list-item [routerLink]="['/cliente']" *ngIf="se_adusu" (click)="panel(3,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de clientes</span>
+                    </a>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 4" ><!--TIENDA-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon>store</mat-icon>
+                            Tienda
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/tienda']" *ngIf="se_adusu" (click)="panel(4,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administración de tiendas</span>
                     </a>
                 </mat-expansion-panel>
             </mat-accordion>

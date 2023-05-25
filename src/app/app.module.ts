@@ -47,6 +47,8 @@ import { ProductoComponent } from './component/productos/producto/producto.compo
 import { ProductoEditarComponent } from './component/productos/producto-editar/producto-editar.component';
 import { ClienteComponent } from './component/clientes/cliente/cliente.component';
 import { ClienteEditarComponent } from './component/clientes/cliente-editar/cliente-editar.component';
+import { TiendaComponent } from './component/tiendas/tienda/tienda.component';
+import { TiendaEditarComponent } from './component/tiendas/tienda-editar/tienda-editar.component';
 
 
 
@@ -74,6 +76,8 @@ import { ClienteEditarComponent } from './component/clientes/cliente-editar/clie
     ProductoEditarComponent,
     ClienteComponent,
     ClienteEditarComponent,
+    TiendaComponent,
+    TiendaEditarComponent,
   
   ],
   imports: [

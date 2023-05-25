@@ -5,17 +5,17 @@
     <div mat-dialog-content class="contenedor">
   
       <mat-form-field>
-        <input matInput placeholder="Código" name="c_codigo" #c_username="ngModel" [(ngModel)]="cliente.c_codigo"
+        <input matInput placeholder="Código" name="c_codigo" #c_codigo="ngModel" [(ngModel)]="cliente.c_codigo"
           minlength="3" required />
         <mat-hint class="error" *ngIf="cliente.c_codigo.length<3">debe tener mínimo de 3 dígitos</mat-hint>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Razón social" name="c_razon_social" #c_username="ngModel" [(ngModel)]="cliente.c_razon_social"
+        <input matInput placeholder="Razón social" name="c_razon_social" #c_razon_social="ngModel" [(ngModel)]="cliente.c_razon_social"
           minlength="3" required />
         <mat-hint class="error" *ngIf="cliente.c_razon_social.length<3">debe tener mínimo de 3 dígitos</mat-hint>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Direccion" name="c_direccion" #c_username="ngModel" [(ngModel)]="cliente.c_direccion"
+        <input matInput placeholder="Direccion" name="c_direccion" #c_direccion="ngModel" [(ngModel)]="cliente.c_direccion"
           minlength="3" required />
         <mat-hint class="error" *ngIf="cliente.c_direccion.length<3">debe tener mínimo de 3 dígitos</mat-hint>
       </mat-form-field>
