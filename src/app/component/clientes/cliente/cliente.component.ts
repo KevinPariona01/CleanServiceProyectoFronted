@@ -28,7 +28,7 @@ export class ClienteComponent extends BaseComponent implements OnInit {
   }
 
   override ngOnInit(): void {
-    this.listarProducto();
+    this.listarCliente();
   }
 
   applyFilter(filterValue: any) {
@@ -36,14 +36,14 @@ export class ClienteComponent extends BaseComponent implements OnInit {
     this.tablaClientes.filter = dato.trim().toLowerCase();
   }
 
-  listarProducto(){
+  listarCliente(){
     this.clienteService.listarCliente({},this.getToken().token)
     .subscribe((res=>{
       if(res.estado){
         this.tablaClientes = new MatTableDataSource<any>(res.data);
       }else{
+        this.openSnackBar(res.mensaje, 2500);
         console.log("OCURRIO UN ERROR");
-        
       }
       
     }));
@@ -57,11 +57,11 @@ export class ClienteComponent extends BaseComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result:any) => {
       try {
-        this.listarProducto();
+        this.listarCliente();
 
       } catch (error) {
         console.log(error);
-        this.listarProducto();
+        this.listarCliente();
       }
     });
   }
@@ -82,10 +82,11 @@ export class ClienteComponent extends BaseComponent implements OnInit {
     this.clienteService.eliminarCliente(dato, this.getToken().token)
     .subscribe((res=>{
       if(res.estado){
-        this.openSnackBar(`Se elimino el cliente ${dato.c_codigo}`,2500);
+        this.openSnackBar('Se elimino el cliente', 2500);
       }else{
-        this.openSnackBar(`Error`,2500);
+        this.openSnackBar(res.mensaje, 2500);
       }
+      this.listarCliente();
     }));
   }
 

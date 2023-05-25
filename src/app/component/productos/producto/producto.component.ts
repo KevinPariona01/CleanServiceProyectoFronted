@@ -42,8 +42,7 @@ export class ProductoComponent extends BaseComponent implements OnInit{
       if(res.estado){
         this.tablaProductos = new MatTableDataSource<any>(res.data);
       }else{
-        console.log("OCURRIO UN ERROR");
-        
+        this.openSnackBar(res.mensaje, 2500); 
       }
       
     }));
@@ -85,8 +84,9 @@ export class ProductoComponent extends BaseComponent implements OnInit{
       if(res.estado){
         this.openSnackBar(`Se elimino el producto ${dato.c_codigo}`,2500);
       }else{
-        this.openSnackBar(`Error`,2500);
+        this.openSnackBar(res.mensaje, 2500);
       }
+      this.listarProducto();
     }));
   }
 
