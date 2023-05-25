@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Edición {{periodo.c_descripcion}}</h2>
+<br>
+<div class="body">
+  <form class="example-container" #newForm="ngForm" (ngSubmit)="guardar(newForm)">
+    <div mat-dialog-content class="contenedor">
+  
+      <mat-form-field>
+        <input matInput placeholder="Mes" name="c_mes" #c_mes="ngModel" [(ngModel)]="periodo.c_mes"
+          minlength="3" required />
+        <mat-hint class="error" *ngIf="periodo.c_mes.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Año" name="c_anio" #c_anio="ngModel" [(ngModel)]="periodo.c_anio"
+          minlength="3" required />
+        <mat-hint class="error" *ngIf="periodo.c_anio.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Descripción" name="c_descripcion" #c_descripcion="ngModel" [(ngModel)]="periodo.c_descripcion"
+          minlength="3" required />
+        <mat-hint class="error" *ngIf="periodo.c_descripcion.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <mat-select [(value)]="periodo.b_activo" >
+          <mat-option [value]=true>Activo</mat-option>
+          <mat-option [value]=false>Inactivo</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+
+    </div>
+    <div mat-dialog-actions>
+  
+      <button button mat-stroked-button color="primary" type="submit" cdkFocusInitial
+        [disabled]="!newForm.form.valid" >
+        <mat-icon>save</mat-icon>
+        <span>Guardar</span>
+      </button>
+    </div>
+  </form>
+</div>

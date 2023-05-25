@@ -49,6 +49,8 @@ import { ClienteComponent } from './component/clientes/cliente/cliente.component
 import { ClienteEditarComponent } from './component/clientes/cliente-editar/cliente-editar.component';
 import { TiendaComponent } from './component/tiendas/tienda/tienda.component';
 import { TiendaEditarComponent } from './component/tiendas/tienda-editar/tienda-editar.component';
+import { PeriodoComponent } from './component/periodos/periodo/periodo.component';
+import { PeriodoEditarComponent } from './component/periodos/periodo-editar/periodo-editar.component';
 
 
 
@@ -78,6 +80,8 @@ import { TiendaEditarComponent } from './component/tiendas/tienda-editar/tienda-
     ClienteEditarComponent,
     TiendaComponent,
     TiendaEditarComponent,
+    PeriodoComponent,
+    PeriodoEditarComponent,
   
   ],
   imports: [

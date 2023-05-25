@@ -8,6 +8,7 @@ import { DataUsuarioComponent } from './component/seguridad/data-usuario/data-us
 import { ProductoComponent } from './component/productos/producto/producto.component';
 import { ClienteComponent } from './component/clientes/cliente/cliente.component';
 import { TiendaComponent } from './component/tiendas/tienda/tienda.component';
+import { PeriodoComponent } from './component/periodos/periodo/periodo.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'producto',component:ProductoComponent},
   {path:'cliente',component:ClienteComponent},
   {path:'tienda',component:TiendaComponent},
+  {path:'periodo',component:PeriodoComponent},
 ];
 
 @NgModule({
