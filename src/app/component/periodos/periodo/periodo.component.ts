@@ -93,7 +93,7 @@ export class PeriodoComponent extends BaseComponent implements OnInit {
 
   estadoPeriodo(item:any): void {
     let request = {
-      n_idperiodo: item.n_idperiodo,
+      n_idgen_periodo: item.n_idgen_periodo,
       b_activo: !item.b_activo,
       //n_id_usermodi: this.usuarioLog.n_idseg_userprofile
     }
