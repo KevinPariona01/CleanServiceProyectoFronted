@@ -73,12 +73,12 @@ export class ClienteComponent extends BaseComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.eliminarProducto(dato);
+        this.eliminarCliente(dato);
       }
     });
   }
 
-  eliminarProducto(dato:any){
+  eliminarCliente(dato:any){
     this.clienteService.eliminarCliente(dato, this.getToken().token)
     .subscribe((res=>{
       if(res.estado){

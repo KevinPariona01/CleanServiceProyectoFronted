@@ -34,7 +34,6 @@ export class BaseComponent implements OnInit {
   }
 
   public isLogin() {
-
     if (this.getToken() == null) {
       this.router.navigate(['/login']);
       this.bLogin = false;
