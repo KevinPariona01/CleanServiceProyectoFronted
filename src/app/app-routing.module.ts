@@ -10,6 +10,7 @@ import { ClienteComponent } from './component/clientes/cliente/cliente.component
 import { TiendaComponent } from './component/tiendas/tienda/tienda.component';
 import { PeriodoComponent } from './component/periodos/periodo/periodo.component';
 import { OrdenComponent } from './component/ordenes/orden/orden.component';
+import { PlantillaExcelOrdenComponent } from './component/ordenes/plantilla-excel-orden/plantilla-excel-orden.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'producto',component:ProductoComponent},
   {path:'cliente',component:ClienteComponent},
   {path:'tienda',component:TiendaComponent},
+  {path:'plantilla-excel-orden',component:PlantillaExcelOrdenComponent},
   {path:'periodo',component:PeriodoComponent},
   {path:'orden',component:OrdenComponent},
 ];

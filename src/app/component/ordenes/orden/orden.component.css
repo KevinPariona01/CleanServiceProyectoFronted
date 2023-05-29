@@ -1,7 +1,15 @@
 .contenedorBody {
     margin: 1%;
-  }
-  
+}  
 table{
     width: 100%;
+}
+.cont{
+  align-items: center;
+}
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

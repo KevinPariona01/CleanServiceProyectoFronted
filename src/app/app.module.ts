@@ -53,6 +53,7 @@ import { TiendaEditarComponent } from './component/tiendas/tienda-editar/tienda-
 import { PeriodoComponent } from './component/periodos/periodo/periodo.component';
 import { PeriodoEditarComponent } from './component/periodos/periodo-editar/periodo-editar.component';
 import { OrdenComponent } from './component/ordenes/orden/orden.component';
+import { PlantillaExcelOrdenComponent } from './component/ordenes/plantilla-excel-orden/plantilla-excel-orden.component';
 
 
 
@@ -85,6 +86,7 @@ import { OrdenComponent } from './component/ordenes/orden/orden.component';
     PeriodoComponent,
     PeriodoEditarComponent,
     OrdenComponent,
+    PlantillaExcelOrdenComponent,
   
   ],
   imports: [

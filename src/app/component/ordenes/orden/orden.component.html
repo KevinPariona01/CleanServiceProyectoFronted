@@ -25,17 +25,55 @@
     </div>
     <div class="contenedorBody" >
         <h2> ADMINISTRACIÓN DE ORDENES</h2>
+        <mat-accordion >
+            <mat-expansion-panel >
+              <mat-expansion-panel-header >
+                <mat-panel-title class="cont">
+                  <mat-icon matSuffix>filter_list</mat-icon> Filtros
+                </mat-panel-title>
+                <mat-panel-description>
+                  Filtrado de datos en la lista
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="contenedor">
+      
+                <mat-form-field>
+                  <mat-select placeholder="Periódos">
+                    <mat-option value="0" (click)='selectPeriodo(0)'>
+                      -TODOS-
+                    </mat-option>
+                    <mat-option *ngFor="let p of periodosActivos" [value]="p.n_idgen_periodo" (click)='selectPeriodo(p.n_idgen_periodo)'>
+                      {{p.c_mes}} : {{p.c_anio}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+      
+            </mat-expansion-panel>
+          </mat-accordion>
+          <br />
         <mat-card>
-            <mat-form-field>
-              <input matInput placeholder="Buscar" (keyup)="applyFilter($event)">
-              <mat-icon matSuffix>search</mat-icon>
-            </mat-form-field>
-            <input type="file" (change)="importar($event)" hidden accept=".xlsx" #fileInput >
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <button color="primary" #upload type="button" mat-raised-button (click)="fileInput.click()">
-                <mat-icon style="padding-right: 8px;">cloud_upload</mat-icon>
-                IMPORTAR
-            </button>
+            <div style="display: flex;" >
+                <mat-form-field>
+                <input matInput placeholder="Buscar" (keyup)="applyFilter($event)">
+                <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+                <div [hidden]="n_idgen_periodo==0" >
+                    <input type="file" (change)="importar($event)" hidden accept=".xlsx" #fileInput >
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button color="primary" #upload type="button" mat-raised-button (click)="fileInput.value='';fileInput.click()">
+                        <mat-icon style="padding-right: 8px;">cloud_upload</mat-icon>
+                        IMPORTAR
+                    </button>
+                </div>
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button color="primary" #upload type="button" mat-raised-button (click)="exportarPlantillaExcel()" >
+                      <mat-icon style="padding-right: 8px;">cloud_download</mat-icon>
+                      EXPORTAR
+                    </button>
+                </div>
+            </div>
             <table mat-table [dataSource]="tablaOrdenes" matSort class="mat-elevation-z8">
 
                 <ng-container matColumnDef="estado">

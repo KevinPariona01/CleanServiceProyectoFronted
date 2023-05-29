@@ -57,4 +57,12 @@ export class PeriodoService {
     return this._http.post(this.url + 'periodo/estadoPeriodo', request, { headers: reqHeader });
   }
 
+  listarPeriodoActivos(request:any,token:any): Observable<any> {
+    var reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    });
+    return this._http.post(this.url + 'periodo/listarPeriodoActivos', request, { headers: reqHeader });
+  }
+
 }
