@@ -67,12 +67,24 @@
                     <mat-expansion-panel-header>
                         <mat-panel-title >
                             <mat-icon>calendar_today</mat-icon>
-                            Periodo
+                            Periódo
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <a mat-list-item [routerLink]="['/periodo']" *ngIf="se_adusu" (click)="panel(5,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de periódos</span>
+                    </a>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 5" ><!--ORDEN-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon>calendar_today</mat-icon>
+                            Orden
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/orden']" *ngIf="se_adusu" (click)="panel(6,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administración de ordenes</span>
                     </a>
                 </mat-expansion-panel>
             </mat-accordion>

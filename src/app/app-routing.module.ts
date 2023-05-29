@@ -9,6 +9,7 @@ import { ProductoComponent } from './component/productos/producto/producto.compo
 import { ClienteComponent } from './component/clientes/cliente/cliente.component';
 import { TiendaComponent } from './component/tiendas/tienda/tienda.component';
 import { PeriodoComponent } from './component/periodos/periodo/periodo.component';
+import { OrdenComponent } from './component/ordenes/orden/orden.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'cliente',component:ClienteComponent},
   {path:'tienda',component:TiendaComponent},
   {path:'periodo',component:PeriodoComponent},
+  {path:'orden',component:OrdenComponent},
 ];
 
 @NgModule({

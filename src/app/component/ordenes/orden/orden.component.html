@@ -1,0 +1,71 @@
+<app-menu>
+    <div class="contenedorBody" [hidden]="!error"  >
+        <mat-card>
+            <table mat-table [dataSource]="tablaErrores" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="fila">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fila </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fila}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="error">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Error </th>
+                    <td mat-cell *matCellDef="let element"> {{element.error}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="errorColumns"></tr>
+                <ng-template let-row matRowDef cdkVirtualFor [matRowDefColumns]="errorColumns">
+                <tr mat-row></tr>
+
+                </ng-template>
+
+            </table>
+        </mat-card>
+    </div>
+    <div class="contenedorBody" >
+        <h2> ADMINISTRACIÓN DE ORDENES</h2>
+        <mat-card>
+            <mat-form-field>
+              <input matInput placeholder="Buscar" (keyup)="applyFilter($event)">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+            <input type="file" (change)="importar($event)" hidden accept=".xlsx" #fileInput >
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button color="primary" #upload type="button" mat-raised-button (click)="fileInput.click()">
+                <mat-icon style="padding-right: 8px;">cloud_upload</mat-icon>
+                IMPORTAR
+            </button>
+            <table mat-table [dataSource]="tablaOrdenes" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="estado">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.c_estado}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="descripcion">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
+                    <td mat-cell *matCellDef="let element"> {{element.c_descripcion}} </td>
+                    </ng-container>
+
+                <ng-container matColumnDef="tienda">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header >Tienda</th>
+                    <td mat-cell *matCellDef="let element"> {{element.n_idgen_tienda}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="periodo">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header >Periodo</th>
+                    <td mat-cell *matCellDef="let element"> {{element.n_idgen_periodo}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <ng-template let-row matRowDef cdkVirtualFor [matRowDefColumns]="displayedColumns">
+                <tr mat-row></tr>
+
+                </ng-template>
+
+            </table>
+        </mat-card>
+    </div>
+</app-menu>
