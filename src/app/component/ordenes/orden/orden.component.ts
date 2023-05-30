@@ -127,20 +127,27 @@ export class OrdenComponent extends BaseComponent implements OnInit {
   agregarOrden(request:any){
     let parametro = {
       periodos : request,
-      n_idgen_periodo : this.n_idgen_periodo
+      n_idgen_periodo : this.n_idgen_periodo,
+      usuario: this.getUser().data.n_idseg_userprofile
     }
+    console.log("Prametro: ", parametro);
+    
     this.ordenService.agregarOrden(parametro, this.getToken().token).subscribe((res=>{
       if(res.estado){
-        this.listarOrden();
-        console.log(res);
-        this.error = false;
-        this.openSnackBar("Se realizó la importación correctamente", 2500);
+        if(res.error_func){
+          console.log(res);
+          this.tablaErrores = new MatTableDataSource<any>(res.data);
+          this.error = true;
+        }else{
+          this.error = false;
+          this.openSnackBar("Se realizó la importación correctamente", 2500);
+        }  
       }else{
-        this.listarOrden();
         console.log(res);
         this.tablaErrores = new MatTableDataSource<any>(res.error);
         this.error = true;
       }
+      this.listarOrden();
     }));
   }
 
