@@ -13,3 +13,13 @@ table{
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.cerrar-error{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1%;
+  border-radius: 50%;
+}
+.cerrar-error:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PeriodoService } from 'src/app/service/periodo.service';
 import { BaseComponent } from '../../base/base.component';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from '../../general/confirm/confirm.component';
 import { PeriodoEditarComponent } from '../periodo-editar/periodo-editar.component';
 import { AppSettings } from 'src/app/common/appsettings';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-periodo',
@@ -18,6 +20,9 @@ export class PeriodoComponent extends BaseComponent implements OnInit {
 
   displayedColumns: string[] = ['editar','mes', 'anio', 'descripcion', 'activo', 'eliminar'];
   public tablaPeriodos!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   constructor(
     private periodoService : PeriodoService,
@@ -42,6 +47,8 @@ export class PeriodoComponent extends BaseComponent implements OnInit {
     .subscribe((res=>{
       if(res.estado){
         this.tablaPeriodos = new MatTableDataSource<any>(res.data);
+        this.tablaPeriodos.sort = this.sort;
+        this.tablaPeriodos.paginator = this.paginator;
       }else{
         this.openSnackBar(res.mensaje, 2500);
         console.log("OCURRIO UN ERROR");

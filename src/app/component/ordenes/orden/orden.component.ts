@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { BaseComponent } from '../../base/base.component';
 import { Router } from '@angular/router';
@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import * as XLSX from 'xlsx';
 import { OrdenService } from 'src/app/service/orden.service';
 import { PeriodoService } from 'src/app/service/periodo.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-orden',
@@ -21,6 +23,9 @@ export class OrdenComponent extends BaseComponent implements OnInit {
   periodosActivos:any = [];
   n_idgen_periodo = 0;
   error:boolean = false;
+
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   constructor(
     public override router: Router, 
@@ -43,6 +48,8 @@ export class OrdenComponent extends BaseComponent implements OnInit {
     this.ordenService.listarOrden(parametro, this.getToken().token).subscribe((res)=>{
       if(res.estado){
           this.tablaOrdenes = new MatTableDataSource<any>(res.data);
+          this.tablaOrdenes.sort = this.sort;
+          this.tablaOrdenes.paginator = this.paginator;
       }else{
         this.openSnackBar(res.mensaje, 2500);
         console.log("OCURRIO UN ERROR");
@@ -64,6 +71,11 @@ export class OrdenComponent extends BaseComponent implements OnInit {
   applyFilter(filterValue: any) {
     let dato = filterValue.target.value
     this.tablaOrdenes.filter = dato.trim().toLowerCase();
+  }
+
+  cerrar_error(event:any){
+    let contenedor: HTMLElement|null = document.getElementById('mat-cont-error');
+    this.error = false;
   }
 
   selectPeriodo(data: any){

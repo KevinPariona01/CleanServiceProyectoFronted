@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { BaseComponent } from '../../base/base.component';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,6 +7,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from '../../general/confirm/confirm.component';
 import { ClienteEditarComponent } from '../cliente-editar/cliente-editar.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-cliente',
@@ -17,6 +19,9 @@ export class ClienteComponent extends BaseComponent implements OnInit {
 
   displayedColumns: string[] = ['editar','codigo', 'razon_social', 'direccion', 'eliminar'];
   public tablaClientes!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   constructor(
     private clienteService : ClienteService,
@@ -41,6 +46,8 @@ export class ClienteComponent extends BaseComponent implements OnInit {
     .subscribe((res=>{
       if(res.estado){
         this.tablaClientes = new MatTableDataSource<any>(res.data);
+        this.tablaClientes.sort = this.sort;
+        this.tablaClientes.paginator = this.paginator;
       }else{
         this.openSnackBar(res.mensaje, 2500);
         console.log("OCURRIO UN ERROR");

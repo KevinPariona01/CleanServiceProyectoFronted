@@ -21,7 +21,7 @@ export class BaseComponent implements OnInit {
     tipo: 0
   };
 
-  pagin: string[] = ['25', '50', '100', '150'];
+  paginador: number[] = [25, 50, 100, 150];
 
   constructor(
     public snackBar: MatSnackBar, public router: Router

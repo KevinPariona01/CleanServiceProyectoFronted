@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductoService } from 'src/app/service/producto.service';
 import { BaseComponent } from '../../base/base.component';
 import { Router } from '@angular/router';
@@ -7,6 +7,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ProductoEditarComponent } from '../producto-editar/producto-editar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from '../../general/confirm/confirm.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-producto',
@@ -17,6 +19,9 @@ export class ProductoComponent extends BaseComponent implements OnInit{
 
   displayedColumns: string[] = ['editar','codigo', 'descripcion', 'eliminar'];
   public tablaProductos!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   constructor(
     private productoService : ProductoService,
@@ -41,6 +46,8 @@ export class ProductoComponent extends BaseComponent implements OnInit{
     .subscribe((res=>{
       if(res.estado){
         this.tablaProductos = new MatTableDataSource<any>(res.data);
+        this.tablaProductos.sort = this.sort;
+        this.tablaProductos.paginator = this.paginator;
       }else{
         this.openSnackBar(res.mensaje, 2500); 
       }
