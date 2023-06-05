@@ -11,6 +11,7 @@ import { TiendaComponent } from './component/tiendas/tienda/tienda.component';
 import { PeriodoComponent } from './component/periodos/periodo/periodo.component';
 import { OrdenComponent } from './component/ordenes/orden/orden.component';
 import { PlantillaExcelOrdenComponent } from './component/ordenes/plantilla-excel-orden/plantilla-excel-orden.component';
+import { EquipoComponent } from './component/equipos/equipo/equipo.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'plantilla-excel-orden',component:PlantillaExcelOrdenComponent},
   {path:'periodo',component:PeriodoComponent},
   {path:'orden',component:OrdenComponent},
+  {path:'equipo',component:EquipoComponent},
 ];
 
 @NgModule({
