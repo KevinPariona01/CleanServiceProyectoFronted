@@ -89,7 +89,7 @@ export class EquipoComponent extends BaseComponent implements OnInit {
     this.equipoService.eliminarEquipo(dato, this.getToken().token)
     .subscribe((res=>{
       if(res.estado){
-        this.openSnackBar('Se elimino el periodo', 2500);
+        this.openSnackBar('Se elimino el equipo', 2500);
       }else{
         this.openSnackBar(res.mensaje, 2500);
       }

@@ -58,6 +58,8 @@ import { EquipoComponent } from './component/equipos/equipo/equipo.component';
 import { EquipoEditarComponent } from './component/equipos/equipo-editar/equipo-editar.component';
 import { MetodologiaComponent } from './component/metodologias/metodologia/metodologia.component';
 import { MetodologiaEditarComponent } from './component/metodologias/metodologia-editar/metodologia-editar.component';
+import { RecomendacionComponent } from './component/recomendaciones/recomendacion/recomendacion.component';
+import { RecomendacionEditarComponent } from './component/recomendaciones/recomendacion-editar/recomendacion-editar.component';
 
 
 
@@ -95,6 +97,8 @@ import { MetodologiaEditarComponent } from './component/metodologias/metodologia
     EquipoEditarComponent,
     MetodologiaComponent,
     MetodologiaEditarComponent,
+    RecomendacionComponent,
+    RecomendacionEditarComponent,
   
   ],
   imports: [

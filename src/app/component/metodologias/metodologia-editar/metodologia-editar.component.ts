@@ -64,7 +64,7 @@ export class MetodologiaEditarComponent extends BaseComponent implements OnInit 
     this.metodologiaService.agregarMetodologia(metodologia, this.getToken().token)
     .subscribe((res)=>{
       if(res.estado){
-        this.openSnackBar("Equipo agregado", 2500);
+        this.openSnackBar("Metodología agregado", 2500);
       }else{
         this.openSnackBar(res.mensaje, 2500);
       }
@@ -75,7 +75,7 @@ export class MetodologiaEditarComponent extends BaseComponent implements OnInit 
     this.metodologiaService.actualizarMetodologia(metodologia, this.getToken().token)
     .subscribe((res)=>{
       if(res.estado){
-        this.openSnackBar("Equipo Actualizado", 2500);
+        this.openSnackBar("Metodología Actualizado", 2500);
       }else{
         this.openSnackBar(res.mensaje, 2500);
       }
