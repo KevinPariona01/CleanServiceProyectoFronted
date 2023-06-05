@@ -53,7 +53,7 @@ export class EquipoEditarComponent extends BaseComponent implements OnInit {
   guardar(newForm:any){
     console.log(this.equipo);
     if(this.editar){
-      this.actualizarPeriodo(this.equipo);
+      this.actualizarEquipo(this.equipo);
     }else{
       this.agregarEquipo(this.equipo);  
     }
@@ -61,8 +61,8 @@ export class EquipoEditarComponent extends BaseComponent implements OnInit {
     this.dialogRef.close({ flag: true, data: this.equipo });
   }
 
-  agregarEquipo(periodo: Equipo){
-    this.equipoService.agregarEquipo(periodo, this.getToken().token)
+  agregarEquipo(equipo: Equipo){
+    this.equipoService.agregarEquipo(equipo, this.getToken().token)
     .subscribe((res)=>{
       if(res.estado){
         this.openSnackBar("Equipo agregado", 2500);
@@ -72,8 +72,8 @@ export class EquipoEditarComponent extends BaseComponent implements OnInit {
     });
   }
 
-  actualizarPeriodo(periodo: Equipo){
-    this.equipoService.actualizarEquipo(periodo, this.getToken().token)
+  actualizarEquipo(equipo: Equipo){
+    this.equipoService.actualizarEquipo(equipo, this.getToken().token)
     .subscribe((res)=>{
       if(res.estado){
         this.openSnackBar("Equipo Actualizado", 2500);
