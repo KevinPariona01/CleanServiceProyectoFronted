@@ -123,7 +123,7 @@
                         <span>Administración de ordenes</span>
                     </a>
                 </mat-expansion-panel>
-                <mat-expansion-panel [expanded]="idPanel == 10" ><!--RECOMENDACION-->
+                <mat-expansion-panel [expanded]="idPanel == 10" ><!--OBSERVACION-->
                     <mat-expansion-panel-header>
                         <mat-panel-title >
                             <mat-icon>record_voice_over</mat-icon>
@@ -135,16 +135,28 @@
                         <span>Administración de observaciones</span>
                     </a>
                 </mat-expansion-panel>
-                <mat-expansion-panel [expanded]="idPanel == 10" ><!--RECOMENDACION-->
+                <mat-expansion-panel [expanded]="idPanel == 11" ><!--INFESTACION-->
                     <mat-expansion-panel-header>
                         <mat-panel-title >
                             <mat-icon>record_voice_over</mat-icon>
                             Infestación
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/infestacion']" *ngIf="se_adusu" (click)="panel(10,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/infestacion']" *ngIf="se_adusu" (click)="panel(11,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de infestaciones</span>
+                    </a>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 12" ><!--PERSONAL-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon>record_voice_over</mat-icon>
+                            Personal
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/personal']" *ngIf="se_adusu" (click)="panel(12,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administración de personales</span>
                     </a>
                 </mat-expansion-panel>
             </mat-accordion>

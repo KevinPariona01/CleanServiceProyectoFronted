@@ -1,18 +1,18 @@
-<h2 mat-dialog-title>Infestación {{infestacion.c_nombre}}</h2>
+<h2 mat-dialog-title>Personal {{personal.c_nombre}}</h2>
 <br>
 <div class="body">
   <form class="example-container" #newForm="ngForm" (ngSubmit)="guardar(newForm)">
     <div mat-dialog-content class="contenedor">
   
       <mat-form-field>
-        <input matInput placeholder="Nombre" name="c_nombre" #c_nombre="ngModel" [(ngModel)]="infestacion.c_nombre"
+        <input matInput placeholder="Nombre" name="c_nombre" #c_nombre="ngModel" [(ngModel)]="personal.c_nombre"
           minlength="3" required />
-        <mat-hint class="error" *ngIf="infestacion.c_nombre.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+        <mat-hint class="error" *ngIf="personal.c_nombre.length<3">debe tener mínimo de 3 dígitos</mat-hint>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Descripción" name="c_descripcion" #c_descripcion="ngModel" [(ngModel)]="infestacion.c_descripcion"
+        <input matInput placeholder="Email" name="c_email" #c_email="ngModel" [(ngModel)]="personal.c_email"
           minlength="3" required />
-        <mat-hint class="error" *ngIf="infestacion.c_descripcion.length<3">debe tener mínimo de 3 dígitos</mat-hint>
+        <mat-hint class="error" *ngIf="personal.c_email.length<3">debe tener mínimo de 3 dígitos</mat-hint>
       </mat-form-field>
 
     </div>

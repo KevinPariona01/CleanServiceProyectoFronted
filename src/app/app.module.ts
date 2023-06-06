@@ -64,6 +64,8 @@ import { ObservacionComponent } from './component/observaciones/observacion/obse
 import { ObservacionEditarComponent } from './component/observaciones/observacion-editar/observacion-editar.component';
 import { InfestacionComponent } from './component/infestaciones/infestacion/infestacion.component';
 import { InfestacionEditarComponent } from './component/infestaciones/infestacion-editar/infestacion-editar.component';
+import { PersonalComponent } from './component/personales/personal/personal.component';
+import { PersonalEditarComponent } from './component/personales/personal-editar/personal-editar.component';
 
 
 
@@ -107,6 +109,8 @@ import { InfestacionEditarComponent } from './component/infestaciones/infestacio
     ObservacionEditarComponent,
     InfestacionComponent,
     InfestacionEditarComponent,
+    PersonalComponent,
+    PersonalEditarComponent,
   
   ],
   imports: [
