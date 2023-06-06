@@ -1,5 +1,6 @@
 .contenedorBody {
     margin: 1%;
+    max-width: 100%;
 }  
 table{
     width: 100%;
@@ -22,4 +23,14 @@ table{
 }
 .cerrar-error:hover{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.mat-column-error {
+  max-width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mat-column-descripcion {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

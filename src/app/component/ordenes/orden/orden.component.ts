@@ -131,7 +131,7 @@ export class OrdenComponent extends BaseComponent implements OnInit {
       }
       this.agregarOrden(request);
     }else{
-      this.openSnackBar('CABECERA ALTERADA: ESTADO | DESCRIPCION | TIENDA \n O NO HAY INFORMACIÓN EN LOS CAMPOS',3500);
+      this.openSnackBar('CABECERA ALTERADA: ESTADO | DESCRIPCION | TIENDA \n O NO HAY INFORMACIÓN EN LOS CAMPOS DE LA FILA 2',4500);
     }
   }
   
