@@ -159,6 +159,18 @@
                         <span>Administración de personales</span>
                     </a>
                 </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 13" ><!--ESPECIE-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon>record_voice_over</mat-icon>
+                            Especie
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/especie']" *ngIf="se_adusu" (click)="panel(13,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administración de especies</span>
+                    </a>
+                </mat-expansion-panel>
             </mat-accordion>
         </mat-nav-list>
         <div class="logo">

@@ -66,6 +66,8 @@ import { InfestacionComponent } from './component/infestaciones/infestacion/infe
 import { InfestacionEditarComponent } from './component/infestaciones/infestacion-editar/infestacion-editar.component';
 import { PersonalComponent } from './component/personales/personal/personal.component';
 import { PersonalEditarComponent } from './component/personales/personal-editar/personal-editar.component';
+import { EspecieComponent } from './component/especies/especie/especie.component';
+import { EspecieEditarComponent } from './component/especies/especie-editar/especie-editar.component';
 
 
 
@@ -111,6 +113,8 @@ import { PersonalEditarComponent } from './component/personales/personal-editar/
     InfestacionEditarComponent,
     PersonalComponent,
     PersonalEditarComponent,
+    EspecieComponent,
+    EspecieEditarComponent,
   
   ],
   imports: [

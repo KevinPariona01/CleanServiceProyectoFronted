@@ -17,6 +17,7 @@ import { RecomendacionComponent } from './component/recomendaciones/recomendacio
 import { ObservacionComponent } from './component/observaciones/observacion/observacion.component';
 import { InfestacionComponent } from './component/infestaciones/infestacion/infestacion.component';
 import { PersonalComponent } from './component/personales/personal/personal.component';
+import { EspecieComponent } from './component/especies/especie/especie.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:'observacion',component:ObservacionComponent},
   {path:'infestacion',component:InfestacionComponent},
   {path:'personal',component:PersonalComponent},
+  {path:'especie',component:EspecieComponent},
 ];
 
 @NgModule({
