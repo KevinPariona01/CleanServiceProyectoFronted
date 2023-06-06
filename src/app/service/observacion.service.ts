@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class EquipoService {
+export class ObservacionService {
 
   public url: String = '';
   public credentials: any;
@@ -17,43 +17,35 @@ export class EquipoService {
       this.url =  environment.url;
   }
 
-  listarEquipo(request:any,token:any): Observable<any> {
+  listarObservacion(request:any,token:any): Observable<any> {
     var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
     });
-    return this._http.post(this.url + 'equipo/listarEquipo', request, { headers: reqHeader });
+    return this._http.post(this.url + 'observacion/listarObservacion', request, { headers: reqHeader });
   } 
 
-  agregarEquipo(request:any,token:any): Observable<any> {
+  agregarObservacion(request:any,token:any): Observable<any> {
     var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
     });
-    return this._http.post(this.url + 'equipo/agregarEquipo', request, { headers: reqHeader });
+    return this._http.post(this.url + 'observacion/agregarObservacion', request, { headers: reqHeader });
   } 
 
-  actualizarEquipo(request:any,token:any): Observable<any> {
+  actualizarObservacion(request:any,token:any): Observable<any> {
     var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
     });
-    return this._http.post(this.url + 'equipo/actualizarEquipo', request, { headers: reqHeader });
+    return this._http.post(this.url + 'observacion/actualizarObservacion', request, { headers: reqHeader });
   } 
 
-  eliminarEquipo(request:any,token:any): Observable<any> {
+  eliminarObservacion(request:any,token:any): Observable<any> {
     var reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
     });
-    return this._http.post(this.url + 'equipo/eliminarEquipo', request, { headers: reqHeader });
-  }
-
-  estadoEquipo(request:any,token:any): Observable<any> {
-    var reqHeader = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-    });
-    return this._http.post(this.url + 'equipo/estadoEquipo', request, { headers: reqHeader });
+    return this._http.post(this.url + 'observacion/eliminarObservacion', request, { headers: reqHeader });
   }
 }

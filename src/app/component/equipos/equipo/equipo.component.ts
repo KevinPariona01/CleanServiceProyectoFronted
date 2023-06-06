@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from '../../general/confirm/confirm.component';
 import { EquipoEditarComponent } from '../equipo-editar/equipo-editar.component';
+import { AppSettings } from 'src/app/common/appsettings';
 
 @Component({
   selector: 'app-equipo',
@@ -97,22 +98,22 @@ export class EquipoComponent extends BaseComponent implements OnInit {
     }));
   }
 
-  estadoPeriodo(item:any): void {
-    /* let request = {
-      n_idgen_periodo: item.n_idgen_periodo,
+  estadoEquipo(item:any): void {
+    let request = {
+      n_idgen_equipo: item.n_idgen_equipo,
       b_activo: !item.b_activo,
       //n_id_usermodi: this.usuarioLog.n_idseg_userprofile
     }
     console.log(request);
-    this.periodoService.estadoPeriodo(request, this.getToken().token).subscribe(
+    this.equipoService.estadoEquipo(request, this.getToken().token).subscribe(
       result => {
         try {
           if (result.estado) {
             //this.getTablaUsuario();//ACTUALIZA LOS ESTADOS
             if(item.b_activo){
-              this.openSnackBar("Periódo Activado", 99);
+              this.openSnackBar("Equipo Activado", 99);
             }else{
-              this.openSnackBar("Periódo Desactivado", 99);
+              this.openSnackBar("Equipo Desactivado", 99);
             }
             
           } else {
@@ -127,7 +128,7 @@ export class EquipoComponent extends BaseComponent implements OnInit {
         } catch (error) {
           this.openSnackBar(AppSettings.SERVICE_NO_CONECT_SERVER, 99);
         }
-      }); */
+      });
   }
 
 }

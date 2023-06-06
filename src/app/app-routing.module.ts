@@ -14,6 +14,7 @@ import { PlantillaExcelOrdenComponent } from './component/ordenes/plantilla-exce
 import { EquipoComponent } from './component/equipos/equipo/equipo.component';
 import { MetodologiaComponent } from './component/metodologias/metodologia/metodologia.component';
 import { RecomendacionComponent } from './component/recomendaciones/recomendacion/recomendacion.component';
+import { ObservacionComponent } from './component/observaciones/observacion/observacion.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'equipo',component:EquipoComponent},
   {path:'metodologia',component:MetodologiaComponent},
   {path:'recomendacion',component:RecomendacionComponent},
+  {path:'observacion',component:ObservacionComponent},
 ];
 
 @NgModule({
