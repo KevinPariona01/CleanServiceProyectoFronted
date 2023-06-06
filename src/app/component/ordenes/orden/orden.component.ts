@@ -107,7 +107,6 @@ export class OrdenComponent extends BaseComponent implements OnInit {
       var worksheet = workbook.Sheets[first_sheet_name];
       var request = XLSX.utils.sheet_to_json(worksheet, { raw: true });
       //ENVIAR ---> request
-      console.log(request);
       this.validarCamposExcel(request);
       
     }
