@@ -68,6 +68,10 @@ import { PersonalComponent } from './component/personales/personal/personal.comp
 import { PersonalEditarComponent } from './component/personales/personal-editar/personal-editar.component';
 import { EspecieComponent } from './component/especies/especie/especie.component';
 import { EspecieEditarComponent } from './component/especies/especie-editar/especie-editar.component';
+import { DosificacionComponent } from './component/dosificaciones/dosificacion/dosificacion.component';
+import { DosificacionEditarComponent } from './component/dosificaciones/dosificacion-editar/dosificacion-editar.component';
+import { IncidenteComponent } from './component/incidentes/incidente/incidente.component';
+import { IncidenteEditarComponent } from './component/incidentes/incidente-editar/incidente-editar.component';
 
 
 
@@ -115,6 +119,10 @@ import { EspecieEditarComponent } from './component/especies/especie-editar/espe
     PersonalEditarComponent,
     EspecieComponent,
     EspecieEditarComponent,
+    DosificacionComponent,
+    DosificacionEditarComponent,
+    IncidenteComponent,
+    IncidenteEditarComponent,
   
   ],
   imports: [

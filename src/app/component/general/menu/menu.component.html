@@ -162,13 +162,37 @@
                 <mat-expansion-panel [expanded]="idPanel == 13" ><!--ESPECIE-->
                     <mat-expansion-panel-header>
                         <mat-panel-title >
-                            <mat-icon>record_voice_over</mat-icon>
+                            <mat-icon><img src="assets/icons/1905225.png" width="25"></mat-icon>
                             Especie
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <a mat-list-item [routerLink]="['/especie']" *ngIf="se_adusu" (click)="panel(13,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de especies</span>
+                    </a>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 14" ><!--DOSIFICACION-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon>record_voice_over</mat-icon>
+                            Dosificación
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/dosificacion']" *ngIf="se_adusu" (click)="panel(14,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administración de dosificaciones</span>
+                    </a>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 15" ><!--INCIDENTE-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon>record_voice_over</mat-icon>
+                            Incidente
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/incidente']" *ngIf="se_adusu" (click)="panel(15,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administración de incidentes</span>
                     </a>
                 </mat-expansion-panel>
             </mat-accordion>

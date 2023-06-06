@@ -18,6 +18,8 @@ import { ObservacionComponent } from './component/observaciones/observacion/obse
 import { InfestacionComponent } from './component/infestaciones/infestacion/infestacion.component';
 import { PersonalComponent } from './component/personales/personal/personal.component';
 import { EspecieComponent } from './component/especies/especie/especie.component';
+import { DosificacionComponent } from './component/dosificaciones/dosificacion/dosificacion.component';
+import { IncidenteComponent } from './component/incidentes/incidente/incidente.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -39,6 +41,8 @@ const routes: Routes = [
   {path:'infestacion',component:InfestacionComponent},
   {path:'personal',component:PersonalComponent},
   {path:'especie',component:EspecieComponent},
+  {path:'dosificacion',component:DosificacionComponent},
+  {path:'incidente',component:IncidenteComponent},
 ];
 
 @NgModule({
