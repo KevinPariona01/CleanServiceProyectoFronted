@@ -13,7 +13,7 @@
                     <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
                 </button> </th>
                 <td mat-cell *matCellDef="let element">
-                <button mat-icon-button color="accent" (click)="editarPeriodo(element)">
+                <button mat-icon-button color="primary" (click)="editarPeriodo(element)">
                     <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
                 </button>
                 </td>
@@ -37,7 +37,7 @@
             <ng-container matColumnDef="activo">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header >Activo</th>
                 <td mat-cell *matCellDef="let element">
-                    <mat-slide-toggle [(ngModel)]="element.b_activo" (click)="estadoPeriodo(element)" ></mat-slide-toggle>
+                    <mat-slide-toggle color="primary" [(ngModel)]="element.b_activo" (click)="estadoPeriodo(element)" ></mat-slide-toggle>
                 </td>
             </ng-container>
 
