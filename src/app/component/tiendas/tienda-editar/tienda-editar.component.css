@@ -1,6 +1,10 @@
 ::ng-deep .mat-dialog-container{
     padding: 0px !important;
   }
+  ::ng-deep .mat-dialog-content{
+    height: 150px;
+    overflow: hidden!important;
+  }
   .contenedor{
       display: flex;
       flex-direction: row;

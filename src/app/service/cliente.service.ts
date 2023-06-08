@@ -56,5 +56,13 @@ export class ClienteService {
     });
     return this._http.post(this.url + 'cliente/clienteXCodigo', request, { headers: reqHeader });
   }
+
+  validarNoRepetir(request:any,token:any): Observable<any> {
+    var reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    });
+    return this._http.post(this.url + 'cliente/validarNoRepetir', request, { headers: reqHeader });
+  }
   
 }

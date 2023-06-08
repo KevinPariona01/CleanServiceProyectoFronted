@@ -48,8 +48,11 @@ export class ProductoEditarComponent extends BaseComponent implements OnInit {
     }
   }
 
-  guardar(newForm:any){
+  async guardar(newForm:any){
     console.log(this.producto);
+    let res_val = await this.validarNoRepetir(this.producto);
+    if(res_val===false){ return }//VALIDAR SI HAY ERROR
+    if(res_val.length>0){ return this.openSnackBar("Ya existe el código, no se puede repetir", 2500); }//VALIDAR SI SE REPITE
     if(this.editar){
       this.actualizarProducto(this.producto);
     }else{
@@ -79,6 +82,24 @@ export class ProductoEditarComponent extends BaseComponent implements OnInit {
         this.openSnackBar(res.mensaje, 2500);
       }
     });
+  }
+
+  async validarNoRepetir(producto:Producto): Promise<any>{
+    let res_val;
+    await new Promise((resolve)=>{
+      this.productoService.validarNoRepetir(producto, this.getToken().token)
+        .subscribe((res)=>{
+        if(res.estado){
+          res_val = res.data;
+          resolve(res_val);
+        }else{
+          this.openSnackBar(res.mensaje, 2500);
+          res_val = false;
+          resolve(res_val);
+        }
+      });
+    });
+    return res_val;
   }
 
 }

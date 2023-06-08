@@ -49,6 +49,14 @@ export class ProductoService {
     return this._http.post(this.url + 'producto/eliminarProducto', request, { headers: reqHeader });
   }
 
+  validarNoRepetir(request:any,token:any): Observable<any> {
+    var reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    });
+    return this._http.post(this.url + 'producto/validarNoRepetir', request, { headers: reqHeader });
+  }
+
   
 
 

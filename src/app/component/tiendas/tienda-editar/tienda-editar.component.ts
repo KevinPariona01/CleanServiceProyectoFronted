@@ -56,8 +56,11 @@ export class TiendaEditarComponent extends BaseComponent implements OnInit {
     }
   }
 
-  guardar(newForm:any){
+  async guardar(newForm:any){
     console.log(this.tienda);
+    let res_val = await this.validarNoRepetir(this.tienda);
+    if(res_val===false){ return }//VALIDAR SI HAY ERROR
+    if(res_val.length>0){ return this.openSnackBar("Ya existe el código, no se puede repetir", 2500); }//VALIDAR SI SE REPITE
     if(this.editar){
       this.actualizarCliente(this.tienda);
     }else{
@@ -108,6 +111,24 @@ export class TiendaEditarComponent extends BaseComponent implements OnInit {
 
   obtenerClenteXCodigo(cliente:Cliente){
     this.tienda.n_idgen_cliente = cliente.n_idgen_cliente;
+  }
+
+  async validarNoRepetir(tienda:Tienda): Promise<any>{
+    let res_val;
+    await new Promise((resolve)=>{
+      this.tiendaService.validarNoRepetir(tienda, this.getToken().token)
+        .subscribe((res)=>{
+        if(res.estado){
+          res_val = res.data;
+          resolve(res_val);
+        }else{
+          this.openSnackBar(res.mensaje, 2500);
+          res_val = false;
+          resolve(res_val);
+        }
+      });
+    });
+    return res_val;
   }
 
 }

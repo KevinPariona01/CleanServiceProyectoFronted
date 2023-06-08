@@ -50,8 +50,11 @@ export class ClienteEditarComponent extends BaseComponent implements OnInit {
     }
   }
 
-  guardar(newForm:any){
+  async guardar(newForm:any){
     console.log(this.cliente);
+    let res_val = await this.validarNoRepetir(this.cliente);
+    if(res_val===false){ return }//VALIDAR SI HAY ERROR
+    if(res_val.length>0){ return this.openSnackBar("Ya existe el código, no se puede repetir", 2500); }//VALIDAR SI SE REPITE
     if(this.editar){
       this.actualizarCliente(this.cliente);
     }else{
@@ -81,6 +84,24 @@ export class ClienteEditarComponent extends BaseComponent implements OnInit {
         this.openSnackBar(res.mensaje, 2500);
       }
     });
+  }
+
+  async validarNoRepetir(cliente:Cliente): Promise<any>{
+    let res_val;
+    await new Promise((resolve)=>{
+      this.clienteService.validarNoRepetir(cliente, this.getToken().token)
+        .subscribe((res)=>{
+        if(res.estado){
+          res_val = res.data;
+          resolve(res_val);
+        }else{
+          this.openSnackBar(res.mensaje, 2500);
+          res_val = false;
+          resolve(res_val);
+        }
+      });
+    });
+    return res_val;
   }
 
 }

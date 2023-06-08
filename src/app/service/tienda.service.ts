@@ -48,4 +48,12 @@ export class TiendaService {
     });
     return this._http.post(this.url + 'tienda/eliminarTienda', request, { headers: reqHeader });
   }
+
+  validarNoRepetir(request:any,token:any): Observable<any> {
+    var reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    });
+    return this._http.post(this.url + 'tienda/validarNoRepetir', request, { headers: reqHeader });
+  }
 }
