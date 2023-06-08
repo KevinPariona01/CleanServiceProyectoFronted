@@ -72,6 +72,7 @@ import { DosificacionComponent } from './component/dosificaciones/dosificacion/d
 import { DosificacionEditarComponent } from './component/dosificaciones/dosificacion-editar/dosificacion-editar.component';
 import { IncidenteComponent } from './component/incidentes/incidente/incidente.component';
 import { IncidenteEditarComponent } from './component/incidentes/incidente-editar/incidente-editar.component';
+import { InicioComponent } from './component/general/inicio/inicio.component';
 
 
 
@@ -123,6 +124,7 @@ import { IncidenteEditarComponent } from './component/incidentes/incidente-edita
     DosificacionEditarComponent,
     IncidenteComponent,
     IncidenteEditarComponent,
+    InicioComponent,
   
   ],
   imports: [

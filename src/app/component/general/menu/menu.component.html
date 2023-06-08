@@ -2,10 +2,8 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="!(isHandset$ | async)">
-        <mat-toolbar class="mat-elevation-z4 barra" color="primary"><label
-                class="titulo">
-                <p>Clean Service</p>
-            </label>
+        <mat-toolbar [routerLink]="['/inicio']" class="mat-elevation-z4 barra" color="primary">
+                <span>Clean Service</span>
         </mat-toolbar>
         <!--último iditem = 29 -->
         <mat-nav-list>
@@ -224,7 +222,7 @@
                 </label>
             </button>         
             <mat-menu #usuario="matMenu">
-                <button mat-menu-item (click)="descargarManual()">Guía</button>
+                <!-- <button mat-menu-item (click)="descargarManual()">Guía</button> -->
                 <button mat-menu-item (click)="openDialogClave()">Cambiar Contraseña</button>
                 <button mat-menu-item (click)="logoff()">Cerrar Sesión</button>
             </mat-menu>

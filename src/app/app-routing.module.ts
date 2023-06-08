@@ -20,10 +20,12 @@ import { PersonalComponent } from './component/personales/personal/personal.comp
 import { EspecieComponent } from './component/especies/especie/especie.component';
 import { DosificacionComponent } from './component/dosificaciones/dosificacion/dosificacion.component';
 import { IncidenteComponent } from './component/incidentes/incidente/incidente.component';
+import { InicioComponent } from './component/general/inicio/inicio.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
+  {path:'inicio',component:InicioComponent},
   {path:'menu',component:MenuComponent},
   {path:'rol',component:RolComponent},
   {path:'usuario',component:UsuarioComponent},

@@ -53,7 +53,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
           this.setToken(result);
           console.log("TODO CORRECTO");
           
-          this.router.navigate(['/menu']);
+          this.router.navigate(['/inicio']);
           this.isLogin();
         } else {
           this.openSnackBar(result.mensaje, 99);
