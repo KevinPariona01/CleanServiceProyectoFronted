@@ -9,7 +9,6 @@ import { AppSettings } from 'src/app/common/appsettings';
 import { ResultadoApi } from 'src/app/interface/common.interface';
 import { SeguridadService } from 'src/app/service/seguridad.service';
 import { SocketService } from 'src/app/service/socket.service';
-import { environment } from 'src/environments/environment';
 import { ResetearClaveComponent } from '../../generico/resetear-clave/resetear-clave.component';
 
 @Component({
@@ -30,6 +29,8 @@ export class MenuComponent extends BaseComponent implements OnInit {
 
   public se_adusu: boolean = false;
   public se_adrol: boolean = false;
+  public se_usu: boolean = false;
+  //
   public ma_adlin: boolean = false;
   public ma_adtil: boolean = false;
   public ma_adzon: boolean = false;
@@ -153,6 +154,9 @@ export class MenuComponent extends BaseComponent implements OnInit {
                 case 'se-adrol':
                   this.se_adrol = true;                      
                   break;
+                case 'se-usu':
+                  this.se_usu = true;                      
+                break;
                 case 'ma-adlin':
                   this.ma_adlin = true;
                   break;

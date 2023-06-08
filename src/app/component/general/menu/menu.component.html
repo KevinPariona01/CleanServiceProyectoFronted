@@ -8,7 +8,7 @@
         <!--último iditem = 29 -->
         <mat-nav-list>
             <mat-accordion>
-                <mat-expansion-panel [expanded]="idPanel == 1" >
+                <mat-expansion-panel *ngIf="se_adusu" [expanded]="idPanel == 1" >
                     <mat-expansion-panel-header>
                         <mat-panel-title >
                             <mat-icon color="primary" >supervisor_account</mat-icon>
@@ -32,7 +32,7 @@
                             Producto
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/producto']" *ngIf="se_adusu" (click)="panel(2,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/producto']" *ngIf="se_usu" (click)="panel(2,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de productos</span>
                     </a>
@@ -44,7 +44,7 @@
                             Cliente
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/cliente']" *ngIf="se_adusu" (click)="panel(3,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/cliente']" *ngIf="se_usu" (click)="panel(3,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de clientes</span>
                     </a>
@@ -56,7 +56,7 @@
                             Tienda
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/tienda']" *ngIf="se_adusu" (click)="panel(4,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/tienda']" *ngIf="se_usu" (click)="panel(4,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de tiendas</span>
                     </a>
@@ -68,7 +68,7 @@
                             Periódo
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/periodo']" *ngIf="se_adusu" (click)="panel(5,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/periodo']" *ngIf="se_usu" (click)="panel(5,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de periódos</span>
                     </a>
@@ -80,7 +80,7 @@
                             Orden
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/orden']" *ngIf="se_adusu" (click)="panel(6,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/orden']" *ngIf="se_usu" (click)="panel(6,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de ordenes</span>
                     </a>
@@ -92,7 +92,7 @@
                             Equipo
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/equipo']" *ngIf="se_adusu" (click)="panel(7,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/equipo']" *ngIf="se_usu" (click)="panel(7,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de equipos</span>
                     </a>
@@ -104,7 +104,7 @@
                             Metodología
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/metodologia']" *ngIf="se_adusu" (click)="panel(8,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/metodologia']" *ngIf="se_usu" (click)="panel(8,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de metodologias</span>
                     </a>
@@ -116,7 +116,7 @@
                             Recomendación
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/recomendacion']" *ngIf="se_adusu" (click)="panel(9,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/recomendacion']" *ngIf="se_usu" (click)="panel(9,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de recomendaciones</span>
                     </a>
@@ -128,7 +128,7 @@
                             Observación
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/observacion']" *ngIf="se_adusu" (click)="panel(10,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/observacion']" *ngIf="se_usu" (click)="panel(10,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de observaciones</span>
                     </a>
@@ -140,7 +140,7 @@
                             Infestación
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/infestacion']" *ngIf="se_adusu" (click)="panel(11,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/infestacion']" *ngIf="se_usu" (click)="panel(11,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de infestaciones</span>
                     </a>
@@ -152,7 +152,7 @@
                             Personal
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/personal']" *ngIf="se_adusu" (click)="panel(12,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/personal']" *ngIf="se_usu" (click)="panel(12,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de personales</span>
                     </a>
@@ -164,7 +164,7 @@
                             Especie
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/especie']" *ngIf="se_adusu" (click)="panel(13,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/especie']" *ngIf="se_usu" (click)="panel(13,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de especies</span>
                     </a>
@@ -176,7 +176,7 @@
                             Dosificación
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/dosificacion']" *ngIf="se_adusu" (click)="panel(14,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/dosificacion']" *ngIf="se_usu" (click)="panel(14,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de dosificaciones</span>
                     </a>
@@ -188,7 +188,7 @@
                             Incidente
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a mat-list-item [routerLink]="['/incidente']" *ngIf="se_adusu" (click)="panel(15,1)" [ngClass]="{'select':iditem == 1}">
+                    <a mat-list-item [routerLink]="['/incidente']" *ngIf="se_usu" (click)="panel(15,1)" [ngClass]="{'select':iditem == 1}">
                         <mat-icon>keyboard_arrow_right</mat-icon>
                         <span>Administración de incidentes</span>
                     </a>
