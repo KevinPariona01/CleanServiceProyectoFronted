@@ -31,34 +31,6 @@ export class MenuComponent extends BaseComponent implements OnInit {
   public se_adrol: boolean = false;
   public se_usu: boolean = false;
   //
-  public ma_adlin: boolean = false;
-  public ma_adtil: boolean = false;
-  public ma_adzon: boolean = false;
-  public ma_adpro: boolean = false;
-  public ma_ademp: boolean = false;
-  public ma_adtfo: boolean = false;
-  public ma_adtie: boolean = false;
-  public ma_adtel: boolean = false;
-  public ma_adtmo: boolean = false;
-  public ma_advag: boolean = false;
-  public ma_adele: boolean = false;
-  public ma_adarm: boolean = false;
-  public ma_admet: boolean = false;
-  public as_adgru: boolean = false;
-  public as_adarc: boolean = false;
-  public imp_imppl: boolean = false;
-  public imp_impli: boolean = false;
-  public imp_impsu: boolean = false;
-  public imp_impmo: boolean = false;
-  public mo_mapge: boolean = false;
-  public mo_datos: boolean = false;
-  public al_adalm: boolean = false;
-  public ma_mapli: boolean = false;
-  public ma_adper: boolean = false;
-  public re_repor: boolean = false; 
-  public ma_adpmo: boolean = false;
-  public ve_adver: boolean = false;
-
   colorPro!: string;
   pantallaRol!: [];
   date!: Date;
@@ -157,87 +129,6 @@ export class MenuComponent extends BaseComponent implements OnInit {
                 case 'se-usu':
                   this.se_usu = true;                      
                 break;
-                case 'ma-adlin':
-                  this.ma_adlin = true;
-                  break;
-                case 'ma-adtil':
-                  this.ma_adtil = true;
-                  break;
-                case 'ma-adzon':
-                  this.ma_adzon = true;
-                  break;
-                case 'ma-adpro':
-                  this.ma_adpro = true;
-                  break;
-                case 'ma-ademp':
-                  this.ma_ademp = true;
-                  break;
-                case 'ma-adtfo':
-                  this.ma_adtfo = true;
-                  break;
-                case 'ma-adtie':
-                  this.ma_adtie = true;
-                  break;
-                case 'ma-adtel':
-                  this.ma_adtel = true;
-                  break;
-                case 'ma-adtmo':
-                  this.ma_adtmo = true;
-                  break;
-                case 'ma-advag':
-                  this.ma_advag = true;
-                  break;
-                case 'ma-adele':
-                  this.ma_adele = true;
-                  break;
-                case 'ma-adarm':
-                  this.ma_adarm = true;
-                  break;
-                case 'ma-admet':
-                  this.ma_admet = true;
-                  break;
-                case 'as-adgru':
-                  this.as_adgru = true;
-                  break;
-                case 'as-adarc':
-                  this.as_adarc = true;
-                  break;
-                case 'imp-imppl':
-                  this.imp_imppl = true;
-                  break;
-                case 'imp-impli':
-                  this.imp_impli = true;
-                  break;
-                case 'imp-impsu':
-                  this.imp_impsu = true;
-                  break;
-                case 'imp-impmo':
-                  this.imp_impmo = true;
-                  break;
-                case 'mo-mapge':
-                  this.mo_mapge = true;
-                  break;
-                case 'mo-datos':
-                  this.mo_datos = true;
-                  break;
-                case 'al-adalm':
-                  this.al_adalm = true;
-                  break;
-                case 'ma-mapli':
-                  this.ma_mapli = true;
-                  break;
-                case 'ma-adper':
-                  this.ma_adper = true;
-                  break;
-                case 're-repor':
-                  this.re_repor = true;
-                  break; 
-                case 'ma-adpmo':
-                  this.ma_adpmo = true;
-                  break;
-                case 've-adver':
-                  this.ve_adver = true;
-                  break;
               }
             }
             
