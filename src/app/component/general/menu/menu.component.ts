@@ -70,7 +70,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
 
   override ngOnInit() {    
     /* this.colorPro = this.proyecto.c_color    */ 
-    this.urlImagen = "../../../../assets/images/logo.png";
+    this.urlImagen = "../../../../assets/images/logo-blanco.png";
     if (this.bLogin) {
       this.username = this.getToken().data.c_username;
       this.usuario = this.getToken().data;
