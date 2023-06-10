@@ -35,5 +35,13 @@ export class OrdenService {
     });
     return this._http.post(this.url + 'orden/agregarOrden', request, { headers: reqHeader });
   } 
+
+  asignarOrdenesTecnico(request:any,token:any): Observable<any> {
+    var reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    });
+    return this._http.post(this.url + 'orden/asignarOrdenesTecnico', request, { headers: reqHeader });
+  } 
   
 }

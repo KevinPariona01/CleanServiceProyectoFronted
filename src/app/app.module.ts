@@ -30,6 +30,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 //COMPONENTS
 
@@ -73,6 +74,8 @@ import { DosificacionEditarComponent } from './component/dosificaciones/dosifica
 import { IncidenteComponent } from './component/incidentes/incidente/incidente.component';
 import { IncidenteEditarComponent } from './component/incidentes/incidente-editar/incidente-editar.component';
 import { InicioComponent } from './component/general/inicio/inicio.component';
+import { OrdenAsignarComponent } from './component/ordenes/orden-asignar/orden-asignar.component';
+import { OrdenUsuarioAsignarComponent } from './component/ordenes/orden-usuario-asignar/orden-usuario-asignar.component';
 
 
 
@@ -125,6 +128,8 @@ import { InicioComponent } from './component/general/inicio/inicio.component';
     IncidenteComponent,
     IncidenteEditarComponent,
     InicioComponent,
+    OrdenAsignarComponent,
+    OrdenUsuarioAsignarComponent,
   
   ],
   imports: [
@@ -153,7 +158,8 @@ import { InicioComponent } from './component/general/inicio/inicio.component';
     MatButtonModule,
     MatAutocompleteModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatCheckboxModule
     
   ],
   providers: [],

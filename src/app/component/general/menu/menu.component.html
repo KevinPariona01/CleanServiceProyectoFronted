@@ -193,6 +193,18 @@
                         <span>Administración de incidentes</span>
                     </a>
                 </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="idPanel == 16" ><!--INCIDENTE-->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title >
+                            <mat-icon color="primary">directions_walk</mat-icon>
+                            Asignación
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item [routerLink]="['/orden-periodo-usuario']" *ngIf="se_usu" (click)="panel(16,1)" [ngClass]="{'select':iditem == 1}">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Asignacion de Usuario para Ordenes de Servicio</span>
+                    </a>
+                </mat-expansion-panel>
             </mat-accordion>
         </mat-nav-list>
         <div class="logo">

@@ -1,0 +1,31 @@
+.contenedorBody {
+    margin: 1%;
+    max-width: 100%;
+}  
+table{
+    width: 100%;
+}
+.cont{
+  align-items: center;
+}
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.cerrar-error{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1%;
+  border-radius: 50%;
+}
+.cerrar-error:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.mat-column-descripcion {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

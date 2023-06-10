@@ -21,6 +21,7 @@ import { EspecieComponent } from './component/especies/especie/especie.component
 import { DosificacionComponent } from './component/dosificaciones/dosificacion/dosificacion.component';
 import { IncidenteComponent } from './component/incidentes/incidente/incidente.component';
 import { InicioComponent } from './component/general/inicio/inicio.component';
+import { OrdenAsignarComponent } from './component/ordenes/orden-asignar/orden-asignar.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path:'especie',component:EspecieComponent},
   {path:'dosificacion',component:DosificacionComponent},
   {path:'incidente',component:IncidenteComponent},
+  {path:'orden-periodo-usuario',component:OrdenAsignarComponent},
 ];
 
 @NgModule({
