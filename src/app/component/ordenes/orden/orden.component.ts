@@ -119,12 +119,12 @@ export class OrdenComponent extends BaseComponent implements OnInit {
       this.openSnackBar("El excel esta vacio", 2500);
       return;
     }
-    const estado = Object.keys(request[0]).includes("ESTADO") ?true:false;
+    //const estado = Object.keys(request[0]).includes("ESTADO") ?true:false;
     const descripcion = Object.keys(request[0]).includes("DESCRIPCION")?true:false;
     const tienda = Object.keys(request[0]).includes("TIENDA")?true:false;
-    if(estado && descripcion && tienda){
+    if(descripcion && tienda){
       for(let r of request){
-          if (r.ESTADO == null || r.ESTADO == undefined ) { r.ESTADO = '' }
+          //if (r.ESTADO == null || r.ESTADO == undefined ) { r.ESTADO = '' }
           if (r.DESCRIPCION == null || r.DESCRIPCION == undefined) { r.DESCRIPCION = '' }
           if (r.TIENDA == null || r.TIENDA == undefined) { r.TIENDA = '' }
       }
