@@ -122,15 +122,19 @@ export class OrdenComponent extends BaseComponent implements OnInit {
     //const estado = Object.keys(request[0]).includes("ESTADO") ?true:false;
     const descripcion = Object.keys(request[0]).includes("DESCRIPCION")?true:false;
     const tienda = Object.keys(request[0]).includes("TIENDA")?true:false;
-    if(descripcion && tienda){
+    const cantidad_personal = Object.keys(request[0]).includes("CANTIDAD_PERSONAL")?true:false;
+    const tiempo_atencion = Object.keys(request[0]).includes("TIEMPO_DE_ATENCION")?true:false;
+    if(descripcion && tienda && cantidad_personal && tiempo_atencion){
       for(let r of request){
           //if (r.ESTADO == null || r.ESTADO == undefined ) { r.ESTADO = '' }
           if (r.DESCRIPCION == null || r.DESCRIPCION == undefined) { r.DESCRIPCION = '' }
           if (r.TIENDA == null || r.TIENDA == undefined) { r.TIENDA = '' }
+          if (r.CANTIDAD_PERSONAL == null || r.CANTIDAD_PERSONAL == undefined) { r.CANTIDAD_PERSONAL = '' }
+          if (r.TIEMPO_DE_ATENCION == null || r.TIEMPO_DE_ATENCION == undefined) { r.TIEMPO_DE_ATENCION = '' }
       }
       this.agregarOrden(request);
     }else{
-      this.openSnackBar('CABECERA ALTERADA: ESTADO | DESCRIPCION | TIENDA \n O NO HAY INFORMACIÓN EN LOS CAMPOS DE LA FILA 2',4500);
+      this.openSnackBar('CABECERA ALTERADA: DESCRIPCION | TIENDA | CANTIDAD_PERSONAL | TIEMPO_DE_ATENCION \n O NO HAY INFORMACIÓN EN LOS CAMPOS DE LA FILA 2',4500);
     }
   }
   

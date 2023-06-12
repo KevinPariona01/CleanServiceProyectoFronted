@@ -128,6 +128,22 @@ export class PlantillaExcelOrdenComponent extends BaseComponent implements OnIni
           bottom: { style: 'thin' },
       };
 
+      ordenes.getCell('C' + row).alignment = { vertical: 'middle', horizontal: 'center' };
+      this.setdatogeneral(ordenes, 'C' + row, 'CANTIDAD_PERSONAL', 10, true, '002060');
+      ordenes.getCell('C' + row).font = { color: { argb: 'FFFFFF' }, bold: true };
+      ordenes.getCell('C' + row).border = {
+          right: { style: 'thin' },
+          bottom: { style: 'thin' },
+      };
+
+      ordenes.getCell('D' + row).alignment = { vertical: 'middle', horizontal: 'center' };
+      this.setdatogeneral(ordenes, 'D' + row, 'TIEMPO_DE_ATENCION', 10, true, '002060');
+      ordenes.getCell('D' + row).font = { color: { argb: 'FFFFFF' }, bold: true };
+      ordenes.getCell('D' + row).border = {
+          right: { style: 'thin' },
+          bottom: { style: 'thin' },
+      };
+
       row = 2;
 
       /* ordenes.getCell('A' + row).alignment = { vertical: 'middle', horizontal: 'center' };
@@ -154,9 +170,26 @@ export class PlantillaExcelOrdenComponent extends BaseComponent implements OnIni
           bottom: { style: 'thin' },
       };
 
+      ordenes.getCell('C' + row).alignment = { vertical: 'middle', horizontal: 'center' };
+      this.setdatogeneral(ordenes, 'C' + row, '---' , 10, false);
+      ordenes.getCell('C' + row).border = {
+          left: { style: 'thin' },
+          right: { style: 'thin' },
+          bottom: { style: 'thin' },
+      };
+
+      ordenes.getCell('D' + row).alignment = { vertical: 'middle', horizontal: 'center' };
+      this.setdatogeneral(ordenes, 'D' + row, '---' , 10, false);
+      ordenes.getCell('D' + row).border = {
+          left: { style: 'thin' },
+          right: { style: 'thin' },
+          bottom: { style: 'thin' },
+      };
+
       ordenes.getColumn(1).width = 40;
       ordenes.getColumn(2).width = 40;
-      //ordenes.getColumn(3).width = 40;
+      ordenes.getColumn(3).width = 40;
+      ordenes.getColumn(4).width = 40;
 
 
       workbook.xlsx.writeBuffer().then((data: any) => {
